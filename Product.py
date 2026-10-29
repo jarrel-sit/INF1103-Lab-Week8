@@ -11,15 +11,6 @@ class Product:
     def __str__(self):
         return f"Product ID: {self.itemid}\nProduct Name: {self.name}\nPrice: {self.price}\nStock: {self.stock}\n"
 
-# name = input('Name:')
-# itemid = input('ID: ')
-# price = input('Price ')
-# stock = input('Stock: ') 
-
-# product = Product(name, itemid, price, stock)
-# print(product.name)
-# product.itemid
-# product.price
-# product.stock
-
-#product.display_information()
+    #Formats Product Details into dictionary format to load as json as Object cannot be stored in JSON
+    def to_dict(self):
+        return{"id": self.itemid, "name": self.name, "price": self.price, "stock": self.stock}
