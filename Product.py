@@ -9,7 +9,7 @@ class Product:
 
     #Displays the information
     def __str__(self):
-        return f"{self.itemid}: {self.iteminfo} "
+        return f"Product ID: {self.itemid}\nProduct Name: {self.name}\nPrice: {self.price}\nStock: {self.stock}\n"
 
 # name = input('Name:')
 # itemid = input('ID: ')
