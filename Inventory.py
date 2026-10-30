@@ -8,12 +8,18 @@ class Inventory:
     def __init__(self):
         self.inventory = []
 
-    #Adds Product Object into existing inventory
+    #Checks if product ID already exists when adding product to inventory, returns boolean value
+    def exists(self,product_id):
+        return any(item.itemid == product_id for item in self.inventory)
+
+    #Adds Product Object into existing inventory based on boolean value from exists method
     def add_product(self, product_to_add):
-        if product_to_add.itemid  in self.inventory:
-            print("Product ID already exists! Unable to add to inventory")
-        else:
-            self.inventory.append(product_to_add)
+       if self.exists(product_to_add.itemid):
+           print ("Product already exists, not adding the product.")
+           return False
+       else:
+           self.inventory.append(product_to_add)
+           return True
 
     #Displays all product Objects in the inventory by printing them to terminal
     def display_all(self):
